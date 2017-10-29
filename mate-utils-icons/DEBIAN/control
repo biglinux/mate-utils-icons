@@ -1,0 +1,11 @@
+Package: mate-utils-icons
+Version: 1.0.0-1big1
+Depends: mate-utils
+Architecture: all
+Maintainer: Bruno Goncalves <www.biglinux.com.br>
+Section: admin
+Priority: optional
+Installed-Size:84
+Description: Add mate icons and entries in another desktops
+
+

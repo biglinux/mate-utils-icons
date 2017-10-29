@@ -1,0 +1,9 @@
+e578176540e1c2a4d0c4fbaea11b0e47  DEBIAN/control
+d41d8cd98f00b204e9800998ecf8427e  DEBIAN/md5sums
+aa8e38f976ccf7683f2c2df9084a8878  DEBIAN/dpkg-divert
+6a1ae892ace1dbb0485cf06d823835b9  DEBIAN/postrm
+1fb4009fe37bb3edf21fb1c9f7548a2f  DEBIAN/preinst
+9f72e3d4800832bf2867a8588ae672ab  usr/share/applications/mate-color-select.desktop
+5aa684a5ec25866267fa9295334b32c9  usr/share/applications/mate-screenshot.desktop
+bfa3b17b509a490242bf5e99920e0c54  usr/share/applications/mate-disk-usage-analyzer.desktop
+3492781bb1634bebdb468e11b49ee7c0  usr/share/applications/mate-search-tool.desktop

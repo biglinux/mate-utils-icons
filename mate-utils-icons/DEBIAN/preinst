@@ -1,0 +1,31 @@
+#!/bin/sh
+set -e
+package_name=mate-utils-icons
+mkdir -p "/usr/share/dpkgdivert/mate-utils-icons"
+case "$1" in
+  install)
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/mate-utils-icons/usrshareapplicationsmate-color-select.desktop" --rename "/usr/share/applications/mate-color-select.desktop"
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/mate-utils-icons/usrshareapplicationsmate-disk-usage-analyzer.desktop" --rename "/usr/share/applications/mate-disk-usage-analyzer.desktop"
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/mate-utils-icons/usrshareapplicationsmate-screenshot.desktop" --rename "/usr/share/applications/mate-screenshot.desktop"
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/mate-utils-icons/usrshareapplicationsmate-search-tool.desktop" --rename "/usr/share/applications/mate-search-tool.desktop"
+    ;;
+  upgrade)
+if [ "$(dpkg-divert --list "/usr/share/applications/mate-color-select.desktop")" = "" ]
+then
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/mate-utils-icons/usrshareapplicationsmate-color-select.desktop" --rename "/usr/share/applications/mate-color-select.desktop"
+fi
+if [ "$(dpkg-divert --list "/usr/share/applications/mate-disk-usage-analyzer.desktop")" = "" ]
+then
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/mate-utils-icons/usrshareapplicationsmate-disk-usage-analyzer.desktop" --rename "/usr/share/applications/mate-disk-usage-analyzer.desktop"
+fi
+if [ "$(dpkg-divert --list "/usr/share/applications/mate-screenshot.desktop")" = "" ]
+then
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/mate-utils-icons/usrshareapplicationsmate-screenshot.desktop" --rename "/usr/share/applications/mate-screenshot.desktop"
+fi
+if [ "$(dpkg-divert --list "/usr/share/applications/mate-search-tool.desktop")" = "" ]
+then
+    dpkg-divert --package "$package_name" --divert "/usr/share/dpkgdivert/mate-utils-icons/usrshareapplicationsmate-search-tool.desktop" --rename "/usr/share/applications/mate-search-tool.desktop"
+fi
+;;
+esac
+exit 0

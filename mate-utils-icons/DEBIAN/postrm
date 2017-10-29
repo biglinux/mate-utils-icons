@@ -1,0 +1,18 @@
+#!/bin/sh
+set -e
+package_name=mate-utils-icons
+case "$1" in
+  remove)
+    dpkg-divert --package "$package_name" --rename --remove "/usr/share/applications/mate-color-select.desktop"
+    dpkg-divert --package "$package_name" --rename --remove "/usr/share/applications/mate-disk-usage-analyzer.desktop"
+    dpkg-divert --package "$package_name" --rename --remove "/usr/share/applications/mate-screenshot.desktop"
+    dpkg-divert --package "$package_name" --rename --remove "/usr/share/applications/mate-search-tool.desktop"
+    ;;
+  purge)
+    dpkg-divert --package "$package_name" --rename --remove "/usr/share/applications/mate-color-select.desktop"
+    dpkg-divert --package "$package_name" --rename --remove "/usr/share/applications/mate-disk-usage-analyzer.desktop"
+    dpkg-divert --package "$package_name" --rename --remove "/usr/share/applications/mate-screenshot.desktop"
+    dpkg-divert --package "$package_name" --rename --remove "/usr/share/applications/mate-search-tool.desktop"
+;;
+esac
+exit 0
